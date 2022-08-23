@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 
 public class GeraFitaSerial {
     public static void main(String[] args) {
-        long star = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
 
         try {
             for (int i = 0; i <= 9; i++) {
@@ -43,8 +43,8 @@ public class GeraFitaSerial {
             e.printStackTrace();
         }
 
-        long fim = System.currentTimeMillis() - star;
+        long fim = System.currentTimeMillis() - start;
 
-        System.out.println("Demorou: " + fim + " segundos");
+        System.out.println("Código executado em " + fim + " segundos");
     }
 }

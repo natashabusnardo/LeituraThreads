@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class GeraFitaParalelo {
     public static void main(String[] args) {
-        long star = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
 
         ArrayList<Thread> tds = new ArrayList<>();
 
@@ -54,9 +54,9 @@ public class GeraFitaParalelo {
                 tds.add(t1);
             }
 
-            long fim = System.currentTimeMillis() - star;
+            long fim = System.currentTimeMillis() - start;
 
-            System.out.println("Demorou: " + fim + " segundos");
+            System.out.println("Código executado em " + fim + " segundos");
 
             for (Thread thread : tds) {
                 thread.start();
@@ -66,9 +66,9 @@ public class GeraFitaParalelo {
                 thread.join();
             }
 
-            fim = System.currentTimeMillis() - star;
+            fim = System.currentTimeMillis() - start;
 
-            System.out.println("Demorou: " + fim + " segundos");
+            System.out.println("Código executado em " + fim + " segundos");
         } catch (Exception e) {
             e.printStackTrace();
         }

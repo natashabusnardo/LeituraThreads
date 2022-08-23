@@ -1,4 +1,4 @@
-package ler;
+package nomes;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,14 +6,15 @@ import java.util.Scanner;
 
 public class LeituraSerial {
     public static void main(String[] args) {
-        long star = System.currentTimeMillis();
+        long start = 0;
 
         try {
             Scanner lerInput = new Scanner(System.in);
 
-            System.out.println("digite o nome");
+            System.out.println("Informe o nome desejado");
             String nome = lerInput.nextLine();
 
+            start = System.currentTimeMillis();
             for (int i = 0; i <= 9; i++) {
                 int arquivo = i;
 
@@ -39,8 +40,8 @@ public class LeituraSerial {
             e.printStackTrace();
         }
 
-        long fim = System.currentTimeMillis() - star;
+        long fim = System.currentTimeMillis() - start;
 
-        System.out.println("Demorou: " + fim / 1000 + " segundos");
+        System.out.println("Código executado em " + fim + " milisegundos");
     }
 }
