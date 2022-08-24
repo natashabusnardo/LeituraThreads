@@ -27,39 +27,30 @@ public class LeituraParalelo {
                     public void run() {
                         try {
                             BufferedReader ler = new BufferedReader(new FileReader("files/nomes/nomescompletos-0" + arquivo + ".txt"));
-
                             String nomeArquivo = "";
-
                             int nLinha = 0;
 
                             while (nomeArquivo != null) {
                                 if (nomeArquivo.toLowerCase().contains(nome.toLowerCase()))
                                     System.out.println("Arquivo: nomescompletos-0" + arquivo + ".txt | Linha: " + nLinha +
                                             "| nome: " + nomeArquivo);
-
                                 nomeArquivo = ler.readLine();
 
                                 nLinha++;
                             }
-
                             ler.close();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
                 };
-
+                t1.start();
+                Thread.yield();
                 tds.add(t1);
             }
-
-            for (Thread thread : tds) {
-                thread.start();
-            }
-
             for (Thread thread : tds) {
                 thread.join();
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
