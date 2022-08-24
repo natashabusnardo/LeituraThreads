@@ -56,8 +56,6 @@ public class GeraFitaParalelo {
 
             long fim = System.currentTimeMillis() - start;
 
-            System.out.println("Código executado em " + fim + " segundos");
-
             for (Thread thread : tds) {
                 thread.start();
             }
